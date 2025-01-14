@@ -1,0 +1,8 @@
+/home/yuri/GitTest/PP_1_1_3-4_JDBC_Hibernate/src/main/java/jm/task/core/jdbc/Main.java
+/home/yuri/GitTest/PP_1_1_3-4_JDBC_Hibernate/src/main/java/jm/task/core/jdbc/dao/UserDao.java
+/home/yuri/GitTest/PP_1_1_3-4_JDBC_Hibernate/src/main/java/jm/task/core/jdbc/dao/UserDaoHibernateImpl.java
+/home/yuri/GitTest/PP_1_1_3-4_JDBC_Hibernate/src/main/java/jm/task/core/jdbc/dao/UserDaoJDBCImpl.java
+/home/yuri/GitTest/PP_1_1_3-4_JDBC_Hibernate/src/main/java/jm/task/core/jdbc/model/User.java
+/home/yuri/GitTest/PP_1_1_3-4_JDBC_Hibernate/src/main/java/jm/task/core/jdbc/service/UserService.java
+/home/yuri/GitTest/PP_1_1_3-4_JDBC_Hibernate/src/main/java/jm/task/core/jdbc/service/UserServiceImpl.java
+/home/yuri/GitTest/PP_1_1_3-4_JDBC_Hibernate/src/main/java/jm/task/core/jdbc/util/Util.java
