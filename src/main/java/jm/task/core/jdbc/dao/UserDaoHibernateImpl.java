@@ -22,7 +22,12 @@ public class UserDaoHibernateImpl implements UserDao {
         try {
             Session session = Util.getSessionFactory().openSession();
             transaction = session.beginTransaction();
-            Query query = session.createSQLQuery("create table if not exists Users");
+            String sql= "CREATE TABLE IF NOT EXISTS User " +
+                    "(id BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY, " +
+                    "name VARCHAR(50) NOT NULL, lastName VARCHAR(50) NOT NULL, " +
+                    "age TINYINT NOT NULL)";
+//            Query query = session.createSQLQuery("create table if not exists Users");
+            Query query = session.createSQLQuery(sql).addEntity(User.class);
             query.executeUpdate();
             transaction.commit();
 
@@ -38,7 +43,7 @@ public class UserDaoHibernateImpl implements UserDao {
         Transaction transaction = null;
         try (Session session = Util.getSessionFactory().openSession();){
             transaction = session.beginTransaction();
-            Query query = session.createSQLQuery("drop table if exists Users");
+            Query query = session.createSQLQuery("drop table if exists User");
             query.executeUpdate();
             session.getTransaction().commit();
 
@@ -71,7 +76,9 @@ public class UserDaoHibernateImpl implements UserDao {
         Transaction transaction = null;
         try (Session session = Util.getSessionFactory().openSession()){
             transaction = session.beginTransaction();
-            session.createQuery("delete User where id = id").executeUpdate();
+//            session.delete(session.get(User.class, id));
+            session.createQuery("delete from User where id = :id")
+                    .setParameter("id", id).executeUpdate();
             transaction.commit();
 
         } catch (Exception e) {
@@ -89,6 +96,7 @@ public class UserDaoHibernateImpl implements UserDao {
         try {
             Session session = Util.getSessionFactory().openSession();
             transaction = session.beginTransaction();
+//            users = session.createQuery("from User").list();
             users = session.createQuery("from User").getResultList();
 
             /*for (User user : users) {

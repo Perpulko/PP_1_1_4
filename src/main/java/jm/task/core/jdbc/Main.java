@@ -15,8 +15,12 @@ public class Main {
         Util.getSessionFactory();
         UserDao userDao = new UserDaoHibernateImpl();
         userDao.createUsersTable();
-        userDao.saveUser("name1","ln1",(byte) 33);
-        userDao.saveUser("name2","ln2",(byte) 31);
-        userDao.cleanUsersTable();
+        userDao.saveUser("Zaur", "Guse", (byte) 33);
+        userDao.saveUser("Evgen", "Petrov", (byte) 31);
+        userDao.saveUser("Pavel", "Pavlov", (byte) 30);
+        userDao.removeUserById(1L);
+        userDao.getAllUsers();
+//        userDao.dropUsersTable();
+//        userDao.cleanUsersTable();
     }
 }
